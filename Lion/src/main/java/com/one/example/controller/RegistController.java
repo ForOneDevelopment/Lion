@@ -28,12 +28,12 @@ public class RegistController {
 
     @RequestMapping("/main/regist")
     public String regist(){
-        return "/new/regist";}
+        return "example/regist";}
 
 
     @RequestMapping("/main/staff")
     public String staff(){
-        return "/new/staff";}
+        return "example/staff";}
 
     @RequestMapping(value = "main/staff/add",method = RequestMethod.POST)  //请求映射
     public String add(StaffRecord record){
