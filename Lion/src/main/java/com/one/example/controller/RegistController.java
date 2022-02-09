@@ -54,4 +54,8 @@ public class RegistController {
         staffService.insert(staff);
         return "example/main";
     }
+
+    @RequestMapping("/main/upload")
+    public String upload(){
+        return "example/upload";}
 }
