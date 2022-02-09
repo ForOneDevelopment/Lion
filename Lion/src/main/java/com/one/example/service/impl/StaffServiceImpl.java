@@ -3,7 +3,6 @@ package com.one.example.service.impl;
 import com.one.example.dao.StaffMapper;
 import com.one.example.entity.Staff;
 import com.one.example.service.StaffService;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +11,6 @@ public class StaffServiceImpl implements StaffService {
 
     // 注入Service依赖
     private final StaffMapper staffMapper;
-    private Logger logger = Logger.getLogger(StaffServiceImpl.class);
 
     @Autowired
     public StaffServiceImpl(StaffMapper staffMapper) {
@@ -26,7 +24,6 @@ public class StaffServiceImpl implements StaffService {
 
     @Override
     public int insert(Staff record) {
-        logger.info("updating data...");
         return staffMapper.insert(record);
     }
 

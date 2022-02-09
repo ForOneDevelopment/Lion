@@ -29,7 +29,7 @@ public class DocumentServiceImpl implements DocumentService {
 //        String operatorName = "admin";
 
         // 设置需要自动生成的属性
-        document.setDocument_id(beginDocId); //首次上传文件document id总为1 Todo
+        document.setDocument_id(beginDocId); //上传文件document id每次加1 Todo
         document.setVersion_id(beginVersionId); // 首次上传版本version id总为1
         document.setOperator_name("admin"); //先默认设置为管理员
         document.setOperate_type("upload"); // 上传操作
