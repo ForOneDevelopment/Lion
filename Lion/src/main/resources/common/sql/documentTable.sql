@@ -16,7 +16,7 @@ CREATE TABLE `document` (
   `category_value_1` varchar(200) COMMENT '类别属性1', -- 预留
   `category_value_2` varchar(200) COMMENT '类别属性2', -- 预留
   `category_value_3` varchar(200) COMMENT '类别属性3', -- 预留
-  `document_text` varchar(10000) NOT NULL COMMENT '上传文件正文', --最大字符量为21589约64m，1m约为52w个汉字
+  `document_text` varchar(10000) NOT NULL COMMENT '上传文件正文', -- 最大字符量为21589约64m，1m约为52w个汉字
   `picture_link` varchar(200) COMMENT '上传图片地址',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT '业务资料表';

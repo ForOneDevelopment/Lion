@@ -3,38 +3,39 @@ package com.one.doc.entity;
 import java.util.Date;
 
 public class Document {
+    //操作id
     private Integer id;
-
+    //文件id
     private Integer document_id;
-
+    //版本id
     private Integer version_id;
-
+    //关联历史文件id
     private String history_document_id;
-
+    //上传文件名称
     private String document_name;
-
+    //上传文件密
     private String document_secret_level;
-
+    //上传文件号
     private String document_release_number;
-
+    //上传文件发布时间
     private Date document_release_time;
-
+    //操作人姓名
     private String operator_name;
-
+    //操作时间
     private Date operate_time;
-
+    //操作说明
     private String operate_remarks;
-
+    //操作类型
     private String operate_type;
-
+    //类别属性1
     private String category_value_1;
-
+    //类别属性2
     private String category_value_2;
-
+    //类别属性3
     private String category_value_3;
-
+    //上传文件正文
     private String document_text;
-
+    //上传图片地址
     private String picture_link;
 
     public Integer getId() {
