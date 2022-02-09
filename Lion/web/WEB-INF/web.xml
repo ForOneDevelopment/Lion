@@ -50,5 +50,7 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-
+    <listener>
+        <listener-class>contextListener.ClearJDBCContextListener</listener-class>
+    </listener>
 </web-app>
