@@ -24,16 +24,19 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Override
     public void add(Document document) {
-        int beginDocId = 1;
+
         int beginVersionId = 1;
 //        String operatorName = "admin";
 
+        Document lastDocument = documentMapper.getLastDocument();
+        int lastDocumentId = lastDocument.getId();
+
         // 设置需要自动生成的属性
-        document.setDocument_id(beginDocId); //上传文件document id每次加1 Todo
-        document.setVersion_id(beginVersionId); // 首次上传版本version id总为1
-        document.setOperator_name("admin"); //先默认设置为管理员
-        document.setOperate_type("upload"); // 上传操作
-        document.setOperate_time(new Date());  //设置文件操作时间
+        document.setDocumentId(lastDocumentId+1); //上传文件document id每次加1
+        document.setVersionId(beginVersionId); // 首次上传版本version id总为1
+//        document.setOperator_name("admin"); //先默认设置为管理员
+        document.setOperateType("upload"); // 上传操作
+        document.setOperateTime(new Date());  //设置文件操作时间
 
         documentMapper.insert(document);
     }
@@ -50,6 +53,8 @@ public class DocumentServiceImpl implements DocumentService {
 
     @Override
     public void update(Document document) {
+        int lastVersionId = document.getVersionId();
+        document.setVersionId(lastVersionId + 1);
         documentMapper.updateByPrimaryKeySelective(document);
     }
 

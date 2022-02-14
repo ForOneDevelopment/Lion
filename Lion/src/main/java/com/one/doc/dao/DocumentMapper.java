@@ -18,4 +18,6 @@ public interface DocumentMapper {
     int updateByPrimaryKeySelective(Document record);
 
     int updateByPrimaryKey(Document record);
+
+    Document getLastDocument(); //获取上一个最大的文件版本号
 }

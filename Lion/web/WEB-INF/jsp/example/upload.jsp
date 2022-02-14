@@ -15,39 +15,39 @@
 
     <tr>
         <h2 style="color:green">上传业务资料</h2>
-        <form method="post" action="upload/add" >
+        <form method="post" action="upload/document_add" >
                 <td align="center"><p>
-                    <label for="document_name">文件名称：</label>
-                    <input name="documentName" id="document_name" type="text" required="required" maxlength="128" />
+                    <label for="document_Name">文件名称：</label>
+                    <input name="documentName" id="document_Name" type="text" required="required" maxlength="128" />
                 </p>
                 </td>
                <td align="center"><p>
-                   <label for="document_secret_level">文件密等：</label>
-                   <input name="document_secret_level" id="document_secret_level" type="text" required="required" maxlength="128" />
+                   <label for="document_Secret_Level">文件密等：</label>
+                   <input name="documentSecretLevel" id="document_Secret_Level" type="text" required="required" maxlength="128" />
                </p>
                </td>
             <td align="center"><p>
-                <label for="document_release_number">文件编号：</label>
-                <input name="document_release_number" id="document_release_number" type="text" required="required" maxlength="128" />
+                <label for="document_Release_Number">文件编号：</label>
+                <input name="documentReleaseNumber" id="document_Release_Number" type="text" required="required" maxlength="128" />
             </p>
             <td align="center"><p>
-                <label for="document_release_time">发布时间：</label>
-                <input name="document_release_time" id="document_release_time" type="text" required="required" maxlength="128" />
-            </p>
-            </td>
-            <td align="center"><p>
-                <label for="operator_name">用户姓名：</label>
-                <input name="operator_name" id="operator_name" type="text" required="required" maxlength="128" />
+                <label for="document_Release_Time">发布时间：</label>
+                <input name="documentReleaseTime" id="document_Release_Time" type="text" required="required" maxlength="128" />
             </p>
             </td>
             <td align="center"><p>
-                <label for="operate_remarks">操作说明：</label>
-                <input name="operate_remarks" id="operate_remarks" type="text" required="required" maxlength="128" />
+                <label for="operator_Name">用户姓名：</label>
+                <input name="operatorName" id="operator_Name" type="text" required="required" maxlength="128" />
             </p>
             </td>
             <td align="center"><p>
-                <label for="document_text">文件正文：</label>
-                <input name="document_text" id="document_text" type="text" required="required" maxlength="128" />
+                <label for="operate_Remarks">操作说明：</label>
+                <input name="operateRemarks" id="operate_Remarks" type="text" required="required" maxlength="128" />
+            </p>
+            </td>
+            <td align="center"><p>
+                <label for="document_Text">文件正文：</label>
+                <input name="documentText" id="document_Text" type="text" required="required" maxlength="128" />
             </p>
             </td>
             <td align="center">

@@ -3,24 +3,23 @@
 <mapper namespace="com.one.doc.dao.DocumentMapper">
   <resultMap id="BaseResultMap" type="com.one.doc.entity.Document">
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="document_id" jdbcType="INTEGER" property="document_id" />
-    <result column="version_id" jdbcType="INTEGER" property="version_id" />
-    <result column="history_document_id" jdbcType="VARCHAR" property="history_document_id" />
-    <result column="document_name" jdbcType="VARCHAR" property="document_name" />
-    <result column="document_secret_level" jdbcType="VARCHAR" property="document_secret_level" />
-    <result column="document_release_number" jdbcType="VARCHAR" property="document_release_number" />
-    <result column="document_release_time" jdbcType="DATE" property="document_release_time" />
-    <result column="operator_name" jdbcType="VARCHAR" property="operator_name" />
-    <result column="operate_time" jdbcType="TIMESTAMP" property="operate_time" />
-    <result column="operate_remarks" jdbcType="VARCHAR" property="operate_remarks" />
-    <result column="operate_type" jdbcType="VARCHAR" property="operate_type" />
-    <result column="category_value_1" jdbcType="VARCHAR" property="category_value_1" />
-    <result column="category_value_2" jdbcType="VARCHAR" property="category_value_2" />
-    <result column="category_value_3" jdbcType="VARCHAR" property="category_value_3" />
-    <result column="document_text" jdbcType="VARCHAR" property="document_text" />
-    <result column="picture_link" jdbcType="VARCHAR" property="picture_link" />
+    <result column="document_id" jdbcType="INTEGER" property="documentId" />
+    <result column="version_id" jdbcType="INTEGER" property="versionId" />
+    <result column="history_document_id" jdbcType="VARCHAR" property="historyDocumentId" />
+    <result column="document_name" jdbcType="VARCHAR" property="documentName" />
+    <result column="document_secret_level" jdbcType="VARCHAR" property="documentSecretLevel" />
+    <result column="document_release_number" jdbcType="VARCHAR" property="documentReleaseNumber" />
+    <result column="document_release_time" jdbcType="VARCHAR" property="documentReleaseTime" />
+    <result column="operator_name" jdbcType="VARCHAR" property="operatorName" />
+    <result column="operate_time" jdbcType="TIMESTAMP" property="operateTime" />
+    <result column="operate_remarks" jdbcType="VARCHAR" property="operateRemarks" />
+    <result column="operate_type" jdbcType="VARCHAR" property="operateType" />
+    <result column="category_value_1" jdbcType="VARCHAR" property="categoryValue1" />
+    <result column="category_value_2" jdbcType="VARCHAR" property="categoryValue2" />
+    <result column="category_value_3" jdbcType="VARCHAR" property="categoryValue3" />
+    <result column="document_text" jdbcType="VARCHAR" property="documentText" />
+    <result column="picture_link" jdbcType="VARCHAR" property="pictureLink" />
   </resultMap>
-  <!--  借助这个可以进行多条件查询-->
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -87,188 +86,191 @@
       operate_remarks, operate_type, category_value_1, 
       category_value_2, category_value_3, document_text, 
       picture_link)
-    values (#{document_id,jdbcType=INTEGER}, #{version_id,jdbcType=INTEGER}, #{history_document_id,jdbcType=VARCHAR}, 
-      #{document_name,jdbcType=VARCHAR}, #{document_secret_level,jdbcType=VARCHAR}, #{document_release_number,jdbcType=VARCHAR}, 
-      #{document_release_time,jdbcType=DATE}, #{operator_name,jdbcType=VARCHAR}, #{operate_time,jdbcType=TIMESTAMP}, 
-      #{operate_remarks,jdbcType=VARCHAR}, #{operate_type,jdbcType=VARCHAR}, #{category_value_1,jdbcType=VARCHAR}, 
-      #{category_value_2,jdbcType=VARCHAR}, #{category_value_3,jdbcType=VARCHAR}, #{document_text,jdbcType=VARCHAR}, 
-      #{picture_link,jdbcType=VARCHAR})
+    values (#{documentId,jdbcType=INTEGER}, #{versionId,jdbcType=INTEGER}, #{historyDocumentId,jdbcType=VARCHAR}, 
+      #{documentName,jdbcType=VARCHAR}, #{documentSecretLevel,jdbcType=VARCHAR}, #{documentReleaseNumber,jdbcType=VARCHAR}, 
+      #{documentReleaseTime,jdbcType=VARCHAR}, #{operatorName,jdbcType=VARCHAR}, #{operateTime,jdbcType=TIMESTAMP}, 
+      #{operateRemarks,jdbcType=VARCHAR}, #{operateType,jdbcType=VARCHAR}, #{categoryValue1,jdbcType=VARCHAR}, 
+      #{categoryValue2,jdbcType=VARCHAR}, #{categoryValue3,jdbcType=VARCHAR}, #{documentText,jdbcType=VARCHAR}, 
+      #{pictureLink,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.one.doc.entity.Document" useGeneratedKeys="true">
     insert into document
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="document_id != null">
+      <if test="documentId != null">
         document_id,
       </if>
-      <if test="version_id != null">
+      <if test="versionId != null">
         version_id,
       </if>
-      <if test="history_document_id != null">
+      <if test="historyDocumentId != null">
         history_document_id,
       </if>
-      <if test="document_name != null">
+      <if test="documentName != null">
         document_name,
       </if>
-      <if test="document_secret_level != null">
+      <if test="documentSecretLevel != null">
         document_secret_level,
       </if>
-      <if test="document_release_number != null">
+      <if test="documentReleaseNumber != null">
         document_release_number,
       </if>
-      <if test="document_release_time != null">
+      <if test="documentReleaseTime != null">
         document_release_time,
       </if>
-      <if test="operator_name != null">
+      <if test="operatorName != null">
         operator_name,
       </if>
-      <if test="operate_time != null">
+      <if test="operateTime != null">
         operate_time,
       </if>
-      <if test="operate_remarks != null">
+      <if test="operateRemarks != null">
         operate_remarks,
       </if>
-      <if test="operate_type != null">
+      <if test="operateType != null">
         operate_type,
       </if>
-      <if test="category_value_1 != null">
+      <if test="categoryValue1 != null">
         category_value_1,
       </if>
-      <if test="category_value_2 != null">
+      <if test="categoryValue2 != null">
         category_value_2,
       </if>
-      <if test="category_value_3 != null">
+      <if test="categoryValue3 != null">
         category_value_3,
       </if>
-      <if test="document_text != null">
+      <if test="documentText != null">
         document_text,
       </if>
-      <if test="picture_link != null">
+      <if test="pictureLink != null">
         picture_link,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="document_id != null">
-        #{document_id,jdbcType=INTEGER},
+      <if test="documentId != null">
+        #{documentId,jdbcType=INTEGER},
       </if>
-      <if test="version_id != null">
-        #{version_id,jdbcType=INTEGER},
+      <if test="versionId != null">
+        #{versionId,jdbcType=INTEGER},
       </if>
-      <if test="history_document_id != null">
-        #{history_document_id,jdbcType=VARCHAR},
+      <if test="historyDocumentId != null">
+        #{historyDocumentId,jdbcType=VARCHAR},
       </if>
-      <if test="document_name != null">
-        #{document_name,jdbcType=VARCHAR},
+      <if test="documentName != null">
+        #{documentName,jdbcType=VARCHAR},
       </if>
-      <if test="document_secret_level != null">
-        #{document_secret_level,jdbcType=VARCHAR},
+      <if test="documentSecretLevel != null">
+        #{documentSecretLevel,jdbcType=VARCHAR},
       </if>
-      <if test="document_release_number != null">
-        #{document_release_number,jdbcType=VARCHAR},
+      <if test="documentReleaseNumber != null">
+        #{documentReleaseNumber,jdbcType=VARCHAR},
       </if>
-      <if test="document_release_time != null">
-        #{document_release_time,jdbcType=DATE},
+      <if test="documentReleaseTime != null">
+        #{documentReleaseTime,jdbcType=VARCHAR},
       </if>
-      <if test="operator_name != null">
-        #{operator_name,jdbcType=VARCHAR},
+      <if test="operatorName != null">
+        #{operatorName,jdbcType=VARCHAR},
       </if>
-      <if test="operate_time != null">
-        #{operate_time,jdbcType=TIMESTAMP},
+      <if test="operateTime != null">
+        #{operateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="operate_remarks != null">
-        #{operate_remarks,jdbcType=VARCHAR},
+      <if test="operateRemarks != null">
+        #{operateRemarks,jdbcType=VARCHAR},
       </if>
-      <if test="operate_type != null">
-        #{operate_type,jdbcType=VARCHAR},
+      <if test="operateType != null">
+        #{operateType,jdbcType=VARCHAR},
       </if>
-      <if test="category_value_1 != null">
-        #{category_value_1,jdbcType=VARCHAR},
+      <if test="categoryValue1 != null">
+        #{categoryValue1,jdbcType=VARCHAR},
       </if>
-      <if test="category_value_2 != null">
-        #{category_value_2,jdbcType=VARCHAR},
+      <if test="categoryValue2 != null">
+        #{categoryValue2,jdbcType=VARCHAR},
       </if>
-      <if test="category_value_3 != null">
-        #{category_value_3,jdbcType=VARCHAR},
+      <if test="categoryValue3 != null">
+        #{categoryValue3,jdbcType=VARCHAR},
       </if>
-      <if test="document_text != null">
-        #{document_text,jdbcType=VARCHAR},
+      <if test="documentText != null">
+        #{documentText,jdbcType=VARCHAR},
       </if>
-      <if test="picture_link != null">
-        #{picture_link,jdbcType=VARCHAR},
+      <if test="pictureLink != null">
+        #{pictureLink,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.one.doc.entity.Document">
     update document
     <set>
-      <if test="document_id != null">
-        document_id = #{document_id,jdbcType=INTEGER},
+      <if test="documentId != null">
+        document_id = #{documentId,jdbcType=INTEGER},
       </if>
-      <if test="version_id != null">
-        version_id = #{version_id,jdbcType=INTEGER},
+      <if test="versionId != null">
+        version_id = #{versionId,jdbcType=INTEGER},
       </if>
-      <if test="history_document_id != null">
-        history_document_id = #{history_document_id,jdbcType=VARCHAR},
+      <if test="historyDocumentId != null">
+        history_document_id = #{historyDocumentId,jdbcType=VARCHAR},
       </if>
-      <if test="document_name != null">
-        document_name = #{document_name,jdbcType=VARCHAR},
+      <if test="documentName != null">
+        document_name = #{documentName,jdbcType=VARCHAR},
       </if>
-      <if test="document_secret_level != null">
-        document_secret_level = #{document_secret_level,jdbcType=VARCHAR},
+      <if test="documentSecretLevel != null">
+        document_secret_level = #{documentSecretLevel,jdbcType=VARCHAR},
       </if>
-      <if test="document_release_number != null">
-        document_release_number = #{document_release_number,jdbcType=VARCHAR},
+      <if test="documentReleaseNumber != null">
+        document_release_number = #{documentReleaseNumber,jdbcType=VARCHAR},
       </if>
-      <if test="document_release_time != null">
-        document_release_time = #{document_release_time,jdbcType=DATE},
+      <if test="documentReleaseTime != null">
+        document_release_time = #{documentReleaseTime,jdbcType=VARCHAR},
       </if>
-      <if test="operator_name != null">
-        operator_name = #{operator_name,jdbcType=VARCHAR},
+      <if test="operatorName != null">
+        operator_name = #{operatorName,jdbcType=VARCHAR},
       </if>
-      <if test="operate_time != null">
-        operate_time = #{operate_time,jdbcType=TIMESTAMP},
+      <if test="operateTime != null">
+        operate_time = #{operateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="operate_remarks != null">
-        operate_remarks = #{operate_remarks,jdbcType=VARCHAR},
+      <if test="operateRemarks != null">
+        operate_remarks = #{operateRemarks,jdbcType=VARCHAR},
       </if>
-      <if test="operate_type != null">
-        operate_type = #{operate_type,jdbcType=VARCHAR},
+      <if test="operateType != null">
+        operate_type = #{operateType,jdbcType=VARCHAR},
       </if>
-      <if test="category_value_1 != null">
-        category_value_1 = #{category_value_1,jdbcType=VARCHAR},
+      <if test="categoryValue1 != null">
+        category_value_1 = #{categoryValue1,jdbcType=VARCHAR},
       </if>
-      <if test="category_value_2 != null">
-        category_value_2 = #{category_value_2,jdbcType=VARCHAR},
+      <if test="categoryValue2 != null">
+        category_value_2 = #{categoryValue2,jdbcType=VARCHAR},
       </if>
-      <if test="category_value_3 != null">
-        category_value_3 = #{category_value_3,jdbcType=VARCHAR},
+      <if test="categoryValue3 != null">
+        category_value_3 = #{categoryValue3,jdbcType=VARCHAR},
       </if>
-      <if test="document_text != null">
-        document_text = #{document_text,jdbcType=VARCHAR},
+      <if test="documentText != null">
+        document_text = #{documentText,jdbcType=VARCHAR},
       </if>
-      <if test="picture_link != null">
-        picture_link = #{picture_link,jdbcType=VARCHAR},
+      <if test="pictureLink != null">
+        picture_link = #{pictureLink,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.one.doc.entity.Document">
     update document
-    set document_id = #{document_id,jdbcType=INTEGER},
-      version_id = #{version_id,jdbcType=INTEGER},
-      history_document_id = #{history_document_id,jdbcType=VARCHAR},
-      document_name = #{document_name,jdbcType=VARCHAR},
-      document_secret_level = #{document_secret_level,jdbcType=VARCHAR},
-      document_release_number = #{document_release_number,jdbcType=VARCHAR},
-      document_release_time = #{document_release_time,jdbcType=DATE},
-      operator_name = #{operator_name,jdbcType=VARCHAR},
-      operate_time = #{operate_time,jdbcType=TIMESTAMP},
-      operate_remarks = #{operate_remarks,jdbcType=VARCHAR},
-      operate_type = #{operate_type,jdbcType=VARCHAR},
-      category_value_1 = #{category_value_1,jdbcType=VARCHAR},
-      category_value_2 = #{category_value_2,jdbcType=VARCHAR},
-      category_value_3 = #{category_value_3,jdbcType=VARCHAR},
-      document_text = #{document_text,jdbcType=VARCHAR},
-      picture_link = #{picture_link,jdbcType=VARCHAR}
+    set document_id = #{documentId,jdbcType=INTEGER},
+      version_id = #{versionId,jdbcType=INTEGER},
+      history_document_id = #{historyDocumentId,jdbcType=VARCHAR},
+      document_name = #{documentName,jdbcType=VARCHAR},
+      document_secret_level = #{documentSecretLevel,jdbcType=VARCHAR},
+      document_release_number = #{documentReleaseNumber,jdbcType=VARCHAR},
+      document_release_time = #{documentReleaseTime,jdbcType=VARCHAR},
+      operator_name = #{operatorName,jdbcType=VARCHAR},
+      operate_time = #{operateTime,jdbcType=TIMESTAMP},
+      operate_remarks = #{operateRemarks,jdbcType=VARCHAR},
+      operate_type = #{operateType,jdbcType=VARCHAR},
+      category_value_1 = #{categoryValue1,jdbcType=VARCHAR},
+      category_value_2 = #{categoryValue2,jdbcType=VARCHAR},
+      category_value_3 = #{categoryValue3,jdbcType=VARCHAR},
+      document_text = #{documentText,jdbcType=VARCHAR},
+      picture_link = #{pictureLink,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getLastDocument" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" /> from document order by document_id desc limit 1;
+  </select>
 </mapper>

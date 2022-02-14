@@ -4,11 +4,11 @@ CREATE TABLE `document` (
   `id` int(10) NOT NULL AUTO_INCREMENT COMMENT 'id',  -- AUTO_INCREMENT可使id递增
   `document_id` int(10) NOT NULL COMMENT '文件id',  -- 标识该文档
   `version_id` int(10) NOT NULL COMMENT '版本id',  -- 标识该文档修改版本
-  `history_document_id` varchar(200) NOT NULL COMMENT '关联历史文件id',  -- 存储关联历史文件最新版id，如1-1,1-4,2-3
+  `history_document_id` varchar(200) COMMENT '关联历史文件id',  -- 存储关联历史文件最新版id，如1-1,1-4,2-3
   `document_name` varchar(200) NOT NULL COMMENT '上传文件名称', -- 确保足够容下文件名称
   `document_secret_level` varchar(50) NOT NULL COMMENT '上传文件密',
   `document_release_number` varchar(50) COMMENT '上传文件号',
-  `document_release_time` date COMMENT '上传文件发布时间',
+  `document_release_time` varchar(50) COMMENT '上传文件发布时间',
   `operator_name` varchar(200) NOT NULL COMMENT '操作人姓名',
   `operate_time` datetime(3) NOT NULL COMMENT '操作时间',
   `operate_remarks` varchar(1000) COMMENT '操作说明',
