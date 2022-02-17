@@ -60,8 +60,9 @@
                     <td>${d.operateTime}</td>
                         <%--                    <td><a href="admin_property_list?cid=${c.id}"><span class="glyphicon glyphicon-th-list"></span></a></td>--%>
                         <%--                    <td><a href="admin_product_list?cid=${c.id}"><span class="glyphicon glyphicon-shopping-cart"></span></a></td>--%>
-                                            <td><a href="list/document_delete?id=${d.id}">edit</a></td>
-<%--                                            <td><a deleteLink="true" href="admin_category_delete?id=${c.id}"><span class="   glyphicon glyphicon-trash"></span></a></td>--%>
+                    <td><a href="list/edit?id=${d.id}"><span class="   glyphicon glyphicon-trash"></span>edit</a></td>
+                    <td><a deleteLink="true" href="list/document_delete?id=${d.id}">delete</a></td>
+
                 </tr>
             </c:forEach>
             </tbody>
